@@ -98,14 +98,14 @@ class Simplepay::TestService < Test::Unit::TestCase
       assert_raise(Simplepay::RequiredFieldMissing) { @service.form }
     end
     
-    should 'default to a basic HTML SUBMIT button' do
+    should 'default to a basic AMAZON image SUBMIT button' do
       document = REXML::Document.new(@service.form({:required => 'set'}))
-      assert_not_nil document.root.elements["input[@type='submit']"]
+      assert_not_nil document.root.elements["input[@type='image']"]
     end
     
     should 'allow class definition of the default submit text' do
       document = REXML::Document.new(@service.form({:required => 'set'}))
-      assert_not_nil document.root.elements["input[@type='submit' and @value='testing']"]
+      assert_not_nil document.root.elements["input[@type='image' and @value='testing']"]
     end
     
     should 'allow the HTML SUBMIT button to be overridden' do

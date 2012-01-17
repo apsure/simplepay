@@ -100,7 +100,12 @@ module Simplepay
     end
     
     def generate_submit_field(submit)
-      options = {:type => 'submit'}
+      options = {
+        :type => 'image',
+        :src => "http://g-ecx.images-amazon.com/images/G/01/asp/golden_small_paynow_withlogo_whitebg.gif",
+        :border => "0"
+      }
+
       options.merge!(:value => self.class.submit_tag) if self.class.submit_tag
       submit ? submit.to_s : Simplepay::Helpers::FormHelper.tag(:input, options)
     end
