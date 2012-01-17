@@ -1,4 +1,4 @@
-%w[rubygems rake rake/clean fileutils newgem rubigen].each { |f| require f }
+%w[rubygems rake rake/clean fileutils newgem rubigen hoe].each { |f| require f }
 require File.dirname(__FILE__) + '/lib/simplepay'
 
 $hoe = Hoe.new('simplepay', Simplepay::VERSION) do |p|
