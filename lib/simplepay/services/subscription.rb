@@ -50,6 +50,8 @@ module Simplepay
       
       required_field :access_key
       required_field :signature
+      required_field :signatureVersion,     :value  => '2'
+      required_field :signatureMethod,      :value  => 'HmacSHA256'
       required_field :account_id,           :as     => :amazon_payments_account_id
       
       required_field :recurring_frequency,  :class  => Support::BillingFrequency

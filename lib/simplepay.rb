@@ -1,8 +1,6 @@
 $:.unshift(File.dirname(__FILE__)) unless
   $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 
-require 'activesupport'
-
 module Simplepay
   
   VERSION = '0.2.2' unless const_defined?(:VERSION)

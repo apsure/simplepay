@@ -82,7 +82,6 @@ module Simplepay
         field :variable_marketplace_fee
         field :recipient_email
         
-      end
-    
+    end
   end
 end

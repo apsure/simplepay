@@ -62,6 +62,14 @@ class Simplepay::Services::TestSubscription < Test::Unit::TestCase
                               :as       => 'signature', 
                               :required => true
 
+    should_have_service_field :signatureVersion,
+                              :as       => 'signatureVersion', 
+                              :required => true
+
+    should_have_service_field :signatureMethod,
+                              :as       => 'signatureMethod', 
+                              :required => true
+
     should_have_service_field :donation_widget,
                               :as       => 'isDonationWidget', 
                               :required => false

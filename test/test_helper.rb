@@ -7,6 +7,8 @@ require 'redgreen' rescue nil
 require 'shoulda'
 require 'mocha'
 
+require 'activesupport'
+
 require File.dirname(__FILE__) + '/../lib/simplepay'
 
 

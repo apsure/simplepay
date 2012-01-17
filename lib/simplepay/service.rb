@@ -119,7 +119,7 @@ module Simplepay
     def set_signature
       fields = {}
       self.fields.each { |f| fields[f.service_name] = f.value unless f.service_name == 'signature' }
-      self.signature = Authentication.generate(fields) if self.respond_to?(:signature=)
+      self.signature = Authentication.generate('post', url, fields) if self.respond_to?(:signature=)
     end
     
   end
