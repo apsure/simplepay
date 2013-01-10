@@ -3,7 +3,7 @@ $:.unshift(File.dirname(__FILE__)) unless
 
 module Simplepay
   
-  VERSION = '0.2.2' unless const_defined?(:VERSION)
+  VERSION = '0.2.3' unless const_defined?(:VERSION)
 
   mattr_accessor :aws_access_key_id
   mattr_accessor :aws_secret_access_key
