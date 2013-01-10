@@ -9,6 +9,9 @@ module Simplepay
   mattr_accessor :aws_secret_access_key
   mattr_accessor :account_id
 
+  mattr_accessor :submit_method
+  @@submit_method = 'post'
+
   mattr_accessor :use_sandbox
   @@use_sandbox = true
 

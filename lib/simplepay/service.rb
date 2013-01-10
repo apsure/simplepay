@@ -88,7 +88,8 @@ module Simplepay
       set_fields(attributes)
       set_signature
       content = generate_input_fields + generate_submit_field(submit)
-      Simplepay::Helpers::FormHelper.content_tag(:form, content, {:method => 'post', :action => url})
+      Simplepay::Helpers::FormHelper.content_tag( :form, content,
+			 {:method => Simplepay.submit_method, :action => url} )
     end
     
     
@@ -124,7 +125,7 @@ module Simplepay
     def set_signature
       fields = {}
       self.fields.each { |f| fields[f.service_name] = f.value unless f.service_name == 'signature' }
-      self.signature = Authentication.generate('post', url, fields) if self.respond_to?(:signature=)
+      self.signature = Authentication.generate(Simplepay.submit_method, url, fields) if self.respond_to?(:signature=)
     end
     
   end
